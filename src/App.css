@@ -6,6 +6,35 @@
   height: 40vmin;
   pointer-events: none;
 }
+.Display-Logo{
+  width:100%;
+  text-align:center;
+  background-color:aliceblue;
+}
+.logo {
+  width: 50%;
+  pointer-events: none;
+}
+.CFlex{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  /* min-height: 10vh; */
+  margin-bottom: 10px;
+}
+.CFlexEnd{
+  display: flex;
+  width: 100%;
+  justify-content:flex-end;
+  align-items: center;
+  /* min-height: 10vh; */
+}
+.CFlexEnd >*{
+  margin: 1px;
+}
+.float-end:after{
+  clear:both;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -15,11 +44,11 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  /* min-height: 80vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: calc(10px + 2vmin);
   color: white;
 }

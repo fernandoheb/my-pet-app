@@ -19,7 +19,7 @@ function App() {
          <Container>
               <Switch>
                     <Route exact path="/" component={Home}></Route>                      
-                    <Route path="/pets" component={ListarPets}></Route>
+                    <Route path="/Pets" component={ListarPets}></Route>
                     <Route path="/novo_pet" component={NovoPet}></Route>
                     <Route path="/atualiza_pet/:id" component={AtualizarPet}></Route>
                     <Route path="/Pet/:id" component={CreateUpdateForm}></Route>

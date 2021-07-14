@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Button,  Container, Form, Row } from 'react-bootstrap';
+import { Button,  Col,  Container, Form, Row } from 'react-bootstrap';
 import PetServico from '../Services/PetServico';
+import '../App.css';
 
 
 
@@ -34,17 +35,15 @@ class NovoPet extends Component {
      
 
     salvarPet = (e) => {               
-        console.log("teste");
+       // console.log("teste");
         let Pet = {
             nome: this.state.nome,
             especie: this.state.especie,
             raca: this.state.raca
         };
         console.log('Pet => ' + JSON.stringify(Pet));
-        PetServico.createPet(Pet).then((res) => {
-            alert(res.data);
+        PetServico.createPet(Pet).then((res) => {          
             this.props.history.push("/Pets");
-
         });
     }
 
@@ -67,14 +66,14 @@ class NovoPet extends Component {
     render() {
         return (
             <Container>
-                <Row className="justify-content-md-center">
-                    <h1>Cadastro de Usuários</h1>
+                <Row className="text-center">
+                    <h1>Admissão dos Pets</h1>
                 </Row>
                 <Form>
                     <Form.Group controlId="formNome">
                         <Form.Control type="text" placeholder="Nome" value={this.state.nome} onChange={this.changeNomeHandler} />
                         <Form.Text className="text-muted">
-                            Digite o seu primeiro nome.
+                            Digite o nome do pet.
                                 </Form.Text>
 
                     </Form.Group>
@@ -82,23 +81,25 @@ class NovoPet extends Component {
                     <Form.Group controlId="formEspecie">
                         <Form.Control type="text" placeholder="Especie" value={this.state.especie} onChange={this.changeEspecieHandler} />
                         <Form.Text className="text-muted">
-                            Digite o seu especie.
+                            Digite a espécie do pet.
                                 </Form.Text>
                     </Form.Group>
 
                     <Form.Group controlId="formRaca">
-                        <Form.Control type="raca" placeholder="seuraca@dominio.com" value={this.state.raca} onChange={this.changeRacaHandler} />
+                        <Form.Control type="text" placeholder="Raça" value={this.state.raca} onChange={this.changeRacaHandler} />
                         <Form.Text className="text-muted">
-                            Digite o seu raca.
+                            Digite a raça do pet.
                                 </Form.Text>
                     </Form.Group>
-                    <Row className="float-right">                           
-                            <Button variant="success" style={{margin:"10px 0px 10px 0px"}} className="btnSubmit" onClick={this.salvarPet}>
+                    <Row >  
+                        <div className=" CFlexEnd">
+                            <Button variant="success"  className="btnSubmit" onClick={this.salvarPet}>
                                 Inserir
                             </Button>                           
-                            <Button variant="warning" style={{margin:"10px"}}  onClick={this.cancelar.bind(this)} >
+                            <Button variant="warning"   onClick={this.cancelar.bind(this)} >
                                 Cancelar
                             </Button>
+                        </div>             
                     </Row>    
                    
                 </Form>

@@ -6,7 +6,7 @@ class FooterComponent extends Component {
     render() {
         return (
             <Container>
-                <Row className="justify-content-md-center">
+                <Row className="text-center">
                     <footer>
                         <small> Desenvolvimento de Web Sites - IFSP 2021 </small>
                     </footer>

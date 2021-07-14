@@ -10,23 +10,23 @@ const url_atualizapet ="http://localhost:8080/pet/update/";
 
 class petServico {
 
-    getPets() {
+    async getPets() {
         return axios.get(url_recuperarpets);
     }
 
-    getPetById(id) {
+    async getPetById(id) {
         return axios.get(url_recuperarpet+id);
     }
   
-    createPet(pet){
+    async createPet(pet){
         return axios.post(url_novopet,pet);        
     }
 
-    updatePet(pet){
+    async updatePet(pet){
         return axios.put(url_atualizapet+pet.id,pet);  
     }
 
-    delPets(id) {
+    async delPets(id) {
         return axios.delete(url_removerpet+id);
     }
 

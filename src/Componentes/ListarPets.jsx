@@ -19,7 +19,8 @@ class ListarPets extends Component {
     }
 
     componentDidMount() {
-        this.getPets();
+        this.interval = setInterval(() => this.getPets(), 1000);
+        
     }
 
     getPets() {
@@ -61,8 +62,8 @@ class ListarPets extends Component {
                         <thead>
                             <tr>
                                 <th>Nome</th>
-                                <th>Raça</th>
                                 <th>Especie</th>
+                                <th>Raça</th>                                
                                 <th> Ações </th>
                             </tr>
                         </thead>
@@ -73,8 +74,8 @@ class ListarPets extends Component {
                                     Pet =>
                                         <tr key={Pet.id} >
                                             <td>{Pet.nome}</td>
-                                            <td>{Pet.raca}</td>
                                             <td>{Pet.especie}</td>
+                                            <td>{Pet.raca}</td>                                           
                                             <td>
                                                 <Button variant="dark" onClick={() => this.updatePet(Pet.id)}   > Editar </Button>
                                                 <Button variant="danger" onClick={() => this.delPet(Pet.id)} > Apagar </Button>
@@ -87,7 +88,6 @@ class ListarPets extends Component {
                 </Row>
                 <Row>
                     <Col md={2} >
-
                         <Button variant="link" onClick={this.voltar.bind(this)}>Voltar</Button>
                     </Col>
 

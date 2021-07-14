@@ -51,10 +51,8 @@ class AtualizarPet extends Component {
             raca: this.state.raca
         };
         console.log('Pet => ' + JSON.stringify(Pet));
-        PetServico.updatePet(Pet).then((res) => {
-            alert(res.data);
+        PetServico.updatePet(Pet).then((res) => {           
             this.props.history.push("/Pets");
-
         });
     }
 
@@ -84,22 +82,22 @@ class AtualizarPet extends Component {
                     <Form.Group controlId="formNome">
                         <Form.Control type="text" placeholder="Nome" value={this.state.nome} onChange={this.changeNomeHandler} />
                         <Form.Text className="text-muted">
-                            Digite o seu primeiro nome.
+                            Digite o nome do pet.
                                 </Form.Text>
 
                     </Form.Group>
 
                     <Form.Group controlId="formEspecie">
-                        <Form.Control type="text" placeholder="Especie" value={this.state.especie} onChange={this.changeEspecieHandler} />
+                        <Form.Control type="text" placeholder="Espécie" value={this.state.especie} onChange={this.changeEspecieHandler} />
                         <Form.Text className="text-muted">
-                            Digite o seu especie.
+                            Digite a espécie do pet.
                                 </Form.Text>
                     </Form.Group>
 
                     <Form.Group controlId="formRaca">
-                        <Form.Control type="raca" placeholder="seuraca@dominio.com" value={this.state.raca} onChange={this.changeRacaHandler} />
+                        <Form.Control type="text" placeholder="Raça" value={this.state.raca} onChange={this.changeRacaHandler} />
                         <Form.Text className="text-muted">
-                            Digite o seu raca.
+                            Digite a raça do pet.
                                 </Form.Text>
                     </Form.Group>
                     <Row className="float-right">                           
