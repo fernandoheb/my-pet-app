@@ -8,7 +8,7 @@ const url_removerpet = "http://localhost:8080/pet/kill/";
 const url_novopet = "http://localhost:8080/pet/addpet";
 const url_atualizapet ="http://localhost:8080/pet/update/";
 
-class petServico {
+class PetServico {
 
     async getPets() {
         return axios.get(url_recuperarpets);
@@ -34,4 +34,4 @@ class petServico {
 
 }
 
-export default new petServico();
+export default new PetServico();
