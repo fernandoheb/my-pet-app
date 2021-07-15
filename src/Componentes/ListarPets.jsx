@@ -40,12 +40,10 @@ class ListarPets extends Component {
     voltar(e) {
         this.props.history.push("/");
     }
-    updatePet(id) {
-        // this.props.history.push(`/atualiza_Pet/${id}`)
+    updatePet(id) {        
         this.props.history.push(`/Pet/${id}`)
     }
-    cadastrar() {
-        // this.props.history.push("/novo_Pet");
+    cadastrar() {        
         this.props.history.push(`/Pet/_add`);
     }
 

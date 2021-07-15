@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button,  Col,  Container, Form, Row } from 'react-bootstrap';
+import { Button, Container, Form, Row } from 'react-bootstrap';
 import PetServico from '../Services/PetServico';
 import '../App.css';
 
@@ -34,8 +34,7 @@ class NovoPet extends Component {
 
      
 
-    salvarPet = (e) => {               
-       // console.log("teste");
+    salvarPet = (e) => {                   
         let Pet = {
             nome: this.state.nome,
             especie: this.state.especie,
